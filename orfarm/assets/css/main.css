@@ -667,7 +667,7 @@ input::placeholder {
 }
 
 .theme-bg-2 {
-  background-color: var(--tp-theme-4);
+  background-color: #121212
 }
 
 .tp-breadcrumb__title {
@@ -4783,12 +4783,12 @@ input::placeholder {
   width: 100%;
 }
 .tphero__thumb-shape-one {
-  top: 220px;
-  right: 45px;
+  top: 250px;
+  right: 65px;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .tphero__thumb-shape-one {
-    top: 175px;
+    top: 200px;
     right: -45px;
   }
 }
