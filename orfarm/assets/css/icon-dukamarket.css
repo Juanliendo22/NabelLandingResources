@@ -981,6 +981,9 @@
 }
 .icon-message:before {
   content: "\ea3d";
+  color: #F61059;
+  font-size: 2rem; /* Ajusta el tamaño según lo necesites */
+
 }
 .icon-plus1:before {
   content: "\ea3e";
