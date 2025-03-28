@@ -45,23 +45,26 @@
 /*  01. THEME DEFAULT CSS START
 /*----------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Schoolbell&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
   /**
   @font family declaration
   */
-  --tp-ff-body: 'Jost', sans-serif;
-  --tp-ff-heading: 'Quicksand', sans-serif;
-  --tp-ff-p: 'Jost', sans-serif;
-  --tp-ff-jost: 'Jost', sans-serif;
-  --tp-ff-font-family: Font Awesome 5 Pro;
+  --tp-ff-body: 'Poppins', sans-serif;
+  --tp-ff-heading: 'Poppins', sans-serif;
+  --tp-ff-p: 'Poppins', sans-serif;
+  --tp-ff-jost: 'Poppins', sans-serif;
+  --tp-ff-font-family: 'Font Awesome 5 Pro';
   /**
   @color declaration
+
   */
   --tp-common-white: #ffffff;
   --tp-common-black: #000;
-  --tp-heading-primary: #2D2A6E;
-  --tp-heading-secondary: #DE1750;
-  --tp-grey-1: #F2F2F6;
+  --tp-heading-primary: #121212;
+  --tp-heading-secondary: #121212;
+  --tp-grey-1: #ffffff;
   --tp-grey-2: #F5F6F8;
   --tp-grey-3: #F5F2FF;
   --tp-grey-4: #FFF3EC;
@@ -77,7 +80,7 @@
   --tp-text-3: #79819C;
   --tp-text-4: #FACFD4;
   --tp-text-5: #FFD600;
-  --tp-theme-1: #2D2A6E;
+  --tp-theme-1: #000000;
   --tp-theme-2: #EA0D42;
   --tp-theme-3: #12B7CE;
   --tp-theme-4: #2D2C6E;
@@ -389,6 +392,7 @@ input::placeholder {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  margin-top: 10px;
 }
 @media (max-width: 767px), only screen and (min-width: 576px) and (max-width: 767px) {
   .tp-btn {
@@ -533,7 +537,7 @@ input::placeholder {
 
 .banner-btn {
   background-color: var(--tp-common-white);
-  color: var(--tp-heading-primary);
+  color: rgb(145, 3, 3);
 }
 
 .border-btn {
@@ -665,10 +669,10 @@ input::placeholder {
 .theme-bg-1 {
   background-color: var(--tp-theme-1);
 }
-
 .theme-bg-2 {
-  background-color: #121212
+  background: linear-gradient(to bottom, #FFFFFF 70%, #F61059 100%);
 }
+
 
 .tp-breadcrumb__title {
   font-family: "Quicksand";
@@ -1121,6 +1125,7 @@ input::placeholder {
   color: var(--tp-heading-secondary);
 }
 .header__main-area {
+  padding:2rem;
   border: 1px solid #E6EAF0;
 }
 .main-menu ul li {
@@ -4901,7 +4906,7 @@ input::placeholder {
   font-size: 65px;
   font-weight: 700;
   color: var(--tp-common-white);
-  font-family: "Quicksand";
+  font-family: "poppins";
   line-height: 1.1;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -5543,12 +5548,12 @@ input::placeholder {
   }
 }
 .tpabout__inner-title-2 {
-  font-family: "Quicksand";
+  font-family: "poppins";
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
   letter-spacing: -0.03em;
-  color: var(--tp-heading-primary);
+  color: black;
 }
 .tpabout__inner-tag {
   font-family: var(--tp-ff-jost);
@@ -6321,7 +6326,7 @@ input::placeholder {
   color: var(--tp-common-white);
   text-transform: uppercase;
   padding: 12px 30px;
-  background-color: var(--tp-theme-1);
+  background-color: rgb(0, 0, 0);
   border-radius: 50px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7677,7 +7682,7 @@ p.checkout-coupon input[type=text]:focus {
   margin-bottom: 30px;
 }
 .tpfooter__widget p {
-  color: var(--tp-grey-10);
+  color: black;
   font-size: 16px;
   margin-bottom: 0;
 }
@@ -7701,7 +7706,7 @@ p.checkout-coupon input[type=text]:focus {
 }
 .tpfooter__widget-time-info span {
   font-size: 16px;
-  color: var(--tp-grey-10);
+  color: black;
   display: block;
 }
 .tpfooter__widget-time-info span b {
@@ -7724,7 +7729,7 @@ p.checkout-coupon input[type=text]:focus {
 }
 .tpfooter__widget-links ul li a {
   font-size: 16px;
-  color: var(--tp-grey-10);
+  color: black;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -7815,7 +7820,7 @@ p.checkout-coupon input[type=text]:focus {
 }
 .tpfooter__phone-num {
   font-weight: 500;
-  font-size: 30px;
+  font-size:20px;
   line-height: 43px;
   color: var(--tp-heading-secondary);
   line-height: 1;
@@ -7898,3 +7903,18 @@ p.checkout-coupon input[type=text]:focus {
 .tpabout__product-accordion ul li {
    padding: 2px 0; /* Espaciado reducido entre elementos */
 }
+
+
+.text-shadow-white {
+    color: black;
+   background-color: #fdfdfdcb;
+   padding: 2rem;
+   border-radius: 30px;
+}
+
+
+
+.imgShadow{
+  filter: drop-shadow(4px 4px 0px #000);
+  }
+  
