@@ -538,7 +538,6 @@ input::placeholder {
 .banner-btn {
   background-color: var(--tp-common-white);
   color:#F61059;
-  border: 2px solid black;
 }
 
 .border-btn {
@@ -2632,7 +2631,7 @@ input::placeholder {
   height: 100%;
   width: 100%;
   border-radius: 10px;
-  background: rgba(10, 12, 31, 0.5);
+  background: #f610594b;
 }
 .tpblog__single-img img {
   width: 100%;
