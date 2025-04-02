@@ -8013,3 +8013,8 @@ p.checkout-coupon input[type=text]:focus {
   transform: scale(1.1);
   box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.4); /* Sombra más intensa al hacer hover */
 }
+
+
+.espaceText{
+  line-height: 80px;
+}
