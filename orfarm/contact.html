@@ -23,6 +23,7 @@
       <link rel="stylesheet" href="assets/css/icon-dukamarket.css">
       <link rel="stylesheet" href="assets/css/jquery-ui.css">
       <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body>
 
@@ -281,53 +282,60 @@
          <!-- breadcrumb-area-end -->
 
       
-         <!-- map-area-start -->
          <section class="map-area tpmap__box">
             <div class="container">
                <div class="row gx-0">
                   <div class="col-lg-6 col-md-6 order-2 order-md-1">
                      <div class="tpmap__wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.294373378635!2d-64.23823692532744!3d-31.433561897080182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a204b0577cc7%3A0xefca0e21a8851162!2sAlexander%20Fleming%202085%2C%20X5011BOC%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1742781287533!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                     </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.294373378635!2d-64.23823692532744!3d-31.433561897080182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a204b0577cc7%3A0xefca0e21a8851162!2sAlexander%20Fleming%202085%2C%20X5011BOC%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1742781287533!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 order-1 order-md-2">
                      <div class="tpform__wrapper pt-120 pb-80 ml-60">
                         <h4 class="tpform__title">Deja tu consulta</h4>
                         <p>¡Rellena los campos para ponernos en contacto!</p>
                         <div class="tpform__box">
-                           <form action="#">
+                           <form id="contactForm">
                               <div class="row gx-7">
                                  <div class="col-lg-6">
                                     <div class="tpform__input mb-20">
-                                       <input type="text" placeholder="Tu nombre">
+                                       <input type="text" id="name" placeholder="Tu nombre" required>
                                     </div>
                                  </div>
                                  <div class="col-lg-6">
                                     <div class="tpform__input mb-20">
-                                       <input type="email" placeholder="Tu email">
+                                       <input type="email" id="email" placeholder="Tu email" required>
                                     </div>
                                  </div>
                                  <div class="col-lg-6">
                                     <div class="tpform__input mb-20">
-                                       <input type="text" placeholder="¿En que estas interesado?">
+                                       <select id="interest" required>
+                                          <option value="" disabled selected>¿En qué estás interesado?</option>
+                                          <option value="AnigPack">AnigPack</option>
+                                          <option value="Insumos/Aditivos">Insumos/Aditivos</option>
+                                          <option value="Materias Primas">Materias Primas</option>
+                                          <option value="Nabel">Nabel</option>
+                                          <option value="Herdam">Herdam</option>
+                                       </select>
                                     </div>
                                  </div>
                                  <div class="col-lg-6">
                                     <div class="tpform__input mb-20">
-                                       <input type="text" placeholder="Tu número de telefono">
+                                       <input type="text" id="phone" placeholder="Tu número de teléfono" required>
                                     </div>
                                  </div>
                                  <div class="col-lg-12">
                                     <div class="tpform__textarea">
-                                       <textarea name="message" placeholder="Dinos lo que necesitas"></textarea>
+                                       <textarea id="message" placeholder="Dinos lo que necesitas" required></textarea>
                                        <div class="tpform__textarea-check mt-20 mb-25">
                                           <div class="form-check">
-                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault01">
-                                             <label class="form-check-label" for="flexCheckDefault01">
-                                                Estoy sujeto a los términos de<a href="#"> Servicio y acepto la Política de Privacidad.</a>
+                                             <input class="form-check-input" type="checkbox" id="terms" required>
+                                             <label class="form-check-label" for="terms">
+                                                Estoy sujeto a los términos de <a href="#">Servicio y acepto la Política de Privacidad.</a>
                                              </label>
-                                           </div>                                  
+                                          </div>
                                        </div>
-                                       <button>¡ENVIAR!</button>
+                                       <button type="submit">¡ENVIAR!</button>
                                     </div>
                                  </div>
                               </div>
@@ -338,7 +346,23 @@
                </div>
             </div>
          </section>
-         <!-- map-area-end -->
+         
+         <script>
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+               e.preventDefault(); // Evita el envío tradicional del formulario
+         
+               const name = document.getElementById('name').value;
+               const email = document.getElementById('email').value;
+               const interest = document.getElementById('interest').value;
+               const phone = document.getElementById('phone').value;
+               const message = document.getElementById('message').value;
+         
+               const whatsappMessage = `Hola, mi nombre es ${name}. Estoy interesado en ${interest}. Mi correo es ${email} y mi número de teléfono es ${phone}. ${message}`;
+               const whatsappUrl = `https://wa.me/5491123456789?text=${encodeURIComponent(whatsappMessage)}`;
+         
+               window.open(whatsappUrl, '_blank'); // Abre WhatsApp en una nueva pestaña
+            });
+         </script>
 
          
    <!-- feature-area-start -->
@@ -408,7 +432,9 @@
 <!-- feature-area-end -->
 
       </main>
-
+      <a href="https://wa.me/5491123456789" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
+         <i class="fa fa-whatsapp"></i>
+      </a>
    <!-- footer-area-start -->
    <footer>
       <div class="tpfooter__area tpfooter__border theme-bg-2">

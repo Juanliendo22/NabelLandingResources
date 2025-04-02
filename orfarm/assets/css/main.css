@@ -7947,3 +7947,28 @@ p.checkout-coupon input[type=text]:focus {
       transform: scale(1.1); /* Slight zoom effect on hover */
       transition: all 0.3s ease;
    }
+
+
+   .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      color: white;
+      font-size: 30px;
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+   }
+
+   .whatsapp-float:hover {
+      background-color: #1ebe57;
+      transform: scale(1.1);
+   }
