@@ -258,6 +258,7 @@
 }
 .icon-check:before {
   content: "\e94c";
+  color:#df1750;
 }
 .icon-check-circle:before {
   content: "\e94d";
